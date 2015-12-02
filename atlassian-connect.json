@@ -1,0 +1,39 @@
+{
+     "key": "insart-vacation-plugin",
+     "name": "Insart Vacation Plugin",
+     "description": "Insart Vacation Plugin",
+     "vendor": {
+         "name": "Atlassian Developer Relations",
+         "url": "https://developer.atlassian.com/"
+     },
+     "baseUrl": "{{localBaseUrl}}",
+     "links": {
+         "self": "{{localBaseUrl}}/atlassian-connect.json",
+         "homepage": "{{localBaseUrl}}/atlassian-connect.json"
+     },
+     "authentication": {
+         "type": "jwt"
+     },
+     "lifecycle": {
+         "installed": "/installed"
+     },
+     "scopes": [
+         "READ"
+     ],
+      "modules": {
+          "generalPages": [
+
+              {
+                  "key": "vacation",
+                  "location": "system.top.navigation.bar",
+                  "name": {
+                      "value": "Vacation"
+                  },
+                  "url": "/vacation",
+                  "conditions": [{
+                      "condition": "user_is_logged_in"
+                  }]
+              }
+          ]
+      }
+ }
